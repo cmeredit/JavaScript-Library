@@ -20,15 +20,15 @@ ES6 Modules have a pretty high browser support (~ 95%), but it might be worth lo
 
 ## Items
 
-Items refer to any object that is visually rendered onto the page. Almost everything will inherit from this.
+Items refer to any object that is visually rendered onto the page. Almost everything will inherit from this. Draggable Items extend Items further to allow drag and drop functionality for both mouse and touch devices.
 
-### Images
+### Images (draggable)
 
 Image items will render an image onto the page.
 
 `var image = new Image(canvas, x, y, width, height, source);`
 
-### Rectangles
+### Rectangles (draggable)
 
 Rectangle items will render a dynamically created rectangle onto the page.
 
