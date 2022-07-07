@@ -1,16 +1,16 @@
 # JavaScript Library
 
 Current Features:
-    - Draggable Items
-    - Items
-        - Images
-        - Rectangles
-    - Containers
+- Draggable Items
+- Items
+    - Images
+    - Rectangles
+- Containers
 
 TODO:
-    - Finish building containers
-    - Build separate event handler?
-    - Fix issue where items cannot be separated when overlapped completely
+- Finish building containers
+- Build separate event handler?
+- Fix issue where items cannot be separated when overlapped completely
 
 ## Note: ES6 Module
 
