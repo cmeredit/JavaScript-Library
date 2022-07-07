@@ -1,4 +1,4 @@
-import { DraggableItem } from "./DraggableItem.js";
+import DraggableItem from "./DraggableItem.js";
 
 /*
 * Class Rectangle.
@@ -6,7 +6,7 @@ import { DraggableItem } from "./DraggableItem.js";
 * @class Rectangle
 * @extends { DraggableItem }
 */
-export class Rectangle extends DraggableItem {
+export default class Rectangle extends DraggableItem {
     stroke = 'black';
     fill = 'red';
 

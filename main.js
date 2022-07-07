@@ -1,6 +1,6 @@
-import { Renderer } from "./core/Renderer.js";
-import { Rectangle } from "./core/items/Rectangle.js";
-import { Container } from "./core/containers/Container.js";
+import Renderer from "./core/Renderer.js";
+import Rectangle from "./core/items/Rectangle.js";
+import Container from "./core/containers/Container.js";
 
 // Build canvas
 var canvas = document.createElement('canvas');

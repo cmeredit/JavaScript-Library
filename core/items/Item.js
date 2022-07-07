@@ -3,7 +3,7 @@
 *
 * @Class Item
 */
-export class Item {
+export default class Item {
     canvas = null;
     x = null;
     y = null;

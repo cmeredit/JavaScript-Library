@@ -1,4 +1,4 @@
-import { Item } from "../items/Item.js";
+import Item from "../items/Item.js";
 
 /*
 * Abstract Class Container
@@ -6,9 +6,9 @@ import { Item } from "../items/Item.js";
 * @class Conainter
 * @extends { Item }
 */
-export class Container extends Item {
-    validItems = [];
-    activeItem = null;
+export default class Container extends Item {
+    #validItems = [];
+    #activeItem = null;
 
     constructor(canvas, x, y, width, height, validItems) {
         super(canvas, x, y, width, height);

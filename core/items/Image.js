@@ -1,4 +1,4 @@
-import { DraggableItem } from "./DraggableItem.js";
+import DraggableItem from "./DraggableItem.js";
 
 /*
 * Class Image.
@@ -6,7 +6,7 @@ import { DraggableItem } from "./DraggableItem.js";
 * @class Image
 * @extends { DraggableItem }
 */
-export class Image extends DraggableItem {
+export default class Image extends DraggableItem {
     img = null;
 
     constructor(canvas, x, y, width, height, source) {

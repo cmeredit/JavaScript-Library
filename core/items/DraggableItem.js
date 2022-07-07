@@ -1,4 +1,4 @@
-import { Item } from "./Item.js";
+import Item from "./Item.js";
 
 /*
 * Abstract Class DraggableItem.
@@ -6,7 +6,7 @@ import { Item } from "./Item.js";
 * @class DraggableItem
 * @extends { Item }
 */
-export class DraggableItem extends Item {
+export default class DraggableItem extends Item {
     offsetX = 0;
     offsetY = 0;
     mouseX = null;

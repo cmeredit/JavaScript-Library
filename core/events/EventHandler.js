@@ -1,4 +1,4 @@
-export class EventHandler {
+export default class EventHandler {
     constructor() {
         
     }
