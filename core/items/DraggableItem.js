@@ -12,16 +12,21 @@ export default class DraggableItem extends Item {
     mouseX = null;
     mouseY = null;
     selected = false;
+    
+    // Allow containers to take responsibility for handling mousedown events,
+    // e.g., Renderer may need to determine which items it owns are to be dragged.
+    responsibleForMouseDown = true;
 
     constructor(canvas, x, y, width, height) {
         super(canvas, x, y, width, height);
         if (this.constructor == DraggableItem)
             throw new Error("Abstract classes can't be instantiated.");
-            
-        // Remove mousedown responsibility
-        //this.canvas.addEventListener('mousedown', (event) => {
-        //    this.handleMouseDown(event);
-        //});
+        
+        this.canvas.addEventListener('mousedown', (event) => {
+            if (this.responsibleForMouseDown) {
+                this.handleMouseDown(event);
+            }
+        });
 
         this.canvas.addEventListener('mouseup', (event) => {
             this.handleMouseUp(event);

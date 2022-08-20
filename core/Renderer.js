@@ -74,5 +74,10 @@ export default class Renderer {
 
     addItem(item) {
         this.items.push(item);
+        
+        // Take responsibility for dragging
+        if (item instanceof DraggableItem) {
+            item.responsibleForMouseDown = false;
+        }
     }
 }
