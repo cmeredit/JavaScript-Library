@@ -18,9 +18,10 @@ export default class DraggableItem extends Item {
         if (this.constructor == DraggableItem)
             throw new Error("Abstract classes can't be instantiated.");
             
-        this.canvas.addEventListener('mousedown', (event) => {
-            this.handleMouseDown(event);
-        });
+        // Remove mousedown responsibility
+        //this.canvas.addEventListener('mousedown', (event) => {
+        //    this.handleMouseDown(event);
+        //});
 
         this.canvas.addEventListener('mouseup', (event) => {
             this.handleMouseUp(event);
@@ -49,13 +50,18 @@ export default class DraggableItem extends Item {
         this.mouseX = parseInt(event.clientX);
         this.mouseY = parseInt(event.clientY);
 
-        // Check if mouse down inside the DraggableItem
-        if ((this.mouseX >= this.x && this.mouseX <= (this.x+this.width))
-            && (this.mouseY >= this.y && this.mouseY <= (this.y+this.height))) {
+        // Do we need to do anything? Yes, iff mouse down inside the DraggableItem
+        const handleEvent = (this.mouseX >= this.x && this.mouseX <= (this.x+this.width))
+            && (this.mouseY >= this.y && this.mouseY <= (this.y+this.height));
+        
+        if (handleEvent) {
                 this.selected = true;
                 this.offsetX = this.mouseX-this.x;
                 this.offsetY = this.mouseY-this.y;
             }
+        
+        // Report whether or not we took action on this event
+        return handleEvent;
     }
 
     handleMouseUp(event) {
